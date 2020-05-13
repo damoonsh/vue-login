@@ -6,7 +6,7 @@
           <v-toolbar-title>Messages</v-toolbar-title>
         </v-toolbar>
 
-        <v-list-item v-for="message in this.$store.state.messages" :key="message" >
+        <v-list-item v-for="(message, index) in this.$store.state.messages" :key="message" :to="'message/'+index" >
           <v-list-item-content>
             <v-list-item-title v-text="message"></v-list-item-title>
           </v-list-item-content>

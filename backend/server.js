@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(bodyParser());
 app.use(cors());
@@ -12,6 +12,10 @@ var messages = ["Mamad", "nubari", "sup?"];
 app.get('/messages', (req, res) => {
 
     res.send(messages);
+});
+
+app.get('/messages/:uid', (req, res) => {
+    res.send(messages[req.params.uid]);
 });
 
 app.post('/messages', (req, res) => {
